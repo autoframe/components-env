@@ -85,6 +85,7 @@ class AfrEnvTest extends TestCase
         $this->assertSame(true, $aEnv['VALID_YESNO_LOWERCASE_TRUE']);
         $this->assertSame(true, $aEnv['VALID_YESNO_UPPERCASE_TRUE']);
         $this->assertSame(true, $aEnv['VALID_YESNO_MIXEDCASE_TRUE']);
+        $this->assertSame(true, $aEnv['EXTRA']);
 
         $this->assertSame(false, $aEnv['VALID_EXPLICIT_LOWERCASE_FALSE']);
         $this->assertSame(false, $aEnv['VALID_EXPLICIT_UPPERCASE_FALSE']);
