@@ -79,14 +79,15 @@ class AfrEnv extends AfrSingletonAbstractClass implements AfrEnvInterface
     /**
      * Run $oEnv->setWorkDir(__DIR__)->readEnv() or $oEnv->readEnvPhpFile(path)
      * @param string $sKey
+     * @param null $mFallback
      * @return array|mixed|null
      * @throws AfrEnvException
      */
-    public function getEnv(string $sKey = '')
+    public function getEnv(string $sKey = '', $mFallback = null)
     {
         $this->validateAll();
         if (strlen($sKey)) {
-            return $this->aEnvData[$sKey] ?? null;
+            return $this->aEnvData[$sKey] ?? $mFallback;
         }
         return $this->aEnvData;
     }

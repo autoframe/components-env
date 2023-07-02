@@ -22,10 +22,11 @@ interface AfrEnvInterface
     /**
      * Run $oEnv->setWorkDir(__DIR__)->readEnv() or $oEnv->readEnvPhpFile(path)
      * @param string $sKey
+     * @param null $mFallback
      * @return array|mixed|null
      * @throws AfrEnvException
      */
-    public function getEnv(string $sKey = '');
+    public function getEnv(string $sKey = '', $mFallback = null);
 
     /**
      * Set load env dir and cache dir
